@@ -1,0 +1,21 @@
+package com.spring.cloud.department.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.cloud.department.entity.Department;
+import com.spring.cloud.department.service.DepartmentService;
+
+@RestController
+public class DepartmentController {
+
+	@Autowired
+	private DepartmentService departmentService;
+	
+	
+	@GetMapping("")
+	public Department saveDepartment() {
+		
+	}
+}

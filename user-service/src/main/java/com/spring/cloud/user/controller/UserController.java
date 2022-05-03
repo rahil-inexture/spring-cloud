@@ -1,0 +1,41 @@
+package com.spring.cloud.user.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.cloud.user.vo.ResponseTemplateVO;
+import com.spring.cloud.user.entity.User;
+import com.spring.cloud.user.service.UserService;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+	  
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserController.class);
+	
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/")
+	public User saveUser(@RequestBody User user) {
+		log.info("Inside the save mehod of UserController");
+		return userService.saveUser(user);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseTemplateVO getUserWithDepartment(@PathVariable("id") Long userId) {
+		log.info("Inside the getUSerWithDepartment mehod of UserController");
+		return userService.getUserWithDepartment(userId);
+	}
+	
+	@GetMapping("/test")
+	public String getHelloMessage() {
+		log.info("Hello world");
+		return "Hello world";
+	}
+}

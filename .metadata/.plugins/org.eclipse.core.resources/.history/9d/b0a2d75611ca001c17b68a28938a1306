@@ -1,0 +1,6 @@
+package com.spring.cloud.gateway;
+
+
+public class FallBackMethodController {
+
+}

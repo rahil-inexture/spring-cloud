@@ -1,0 +1,12 @@
+package com.spring.cloud.gateway;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class FallBackMethodController {
+	
+	public String userServiceFallBackMethod() {
+		
+		return "User service longer than expected. Please Try Again Later";
+	}
+}

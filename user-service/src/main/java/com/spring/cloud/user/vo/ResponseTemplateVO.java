@@ -1,0 +1,31 @@
+package com.spring.cloud.user.vo;
+
+import com.spring.cloud.user.entity.Department;
+import com.spring.cloud.user.entity.User;
+
+
+public class ResponseTemplateVO {
+	
+	private User user;
+	private Department department;
+	
+	public ResponseTemplateVO() {
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	
+	public ResponseTemplateVO(User user, Department department) {
+		this.user = user;
+		this.department = department;
+	}
+}

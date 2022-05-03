@@ -1,0 +1,9 @@
+package com.spring.cloud.department;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+
+public class PersistenceJPAConfig {
+
+}

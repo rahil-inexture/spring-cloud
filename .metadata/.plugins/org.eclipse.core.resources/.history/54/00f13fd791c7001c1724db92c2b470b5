@@ -1,0 +1,25 @@
+package com.spring.cloud.department.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.spring.cloud.department.entity.Department;
+import com.spring.cloud.department.repository.DepartmentRepository;
+
+@Service
+public class DepartmentService {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DepartmentService.class);
+	
+	@Autowired
+	private DepartmentRepository departmentRepository;
+
+	public Department saveDepartment(Department department) {
+		log.info("Inside the save mehod of DepartmentService");
+		return departmentRepository.save(department);
+	}
+
+	public Department findByDepartmentId(Long id) {
+		log.info("Inside the findById mehod of DepartmentService");
+		return departmentRepository.getById(id);
+	}
+}

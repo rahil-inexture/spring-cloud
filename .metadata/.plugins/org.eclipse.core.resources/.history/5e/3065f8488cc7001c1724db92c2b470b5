@@ -1,0 +1,5 @@
+package com.spring.cloud.department.entity;
+
+public class Department {
+
+}
